@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0b0b0b;
+    color: #fff;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: rgba(0, 0, 0, 0.85);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #ff4444;
+}
+
+.hero {
+    height: 90vh;
+    background: url("assets/updatedhomesite.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 60px;
+    border-radius: 12px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.socials a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    border-bottom: 2px solid #ff4444;
+    padding-bottom: 3px;
+    transition: color 0.2s ease;
+}
+
+.socials a:hover {
+    color: #ff4444;
+}
+
+.intro {
+    padding: 60px 15%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #ff2222;
+}
+
+footer {
+    background: #111;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
