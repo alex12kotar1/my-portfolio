@@ -54,12 +54,12 @@ body {
 
 /* left one sits to the left of center */
 .social-left {
-  right: 52%; /* slightly left of center line */
+  right: 55%; /* slightly left of center line */
 }
 
 /* right one sits to the right of center */
 .social-right {
-  left: 52%; /* slightly right of center line */
+  left: 55%; /* slightly right of center line */
 }
 
 .social-left:hover, .social-right:hover {
@@ -114,4 +114,5 @@ body {
   .nav a { font-size: 40px; }
   .nav { gap: 40px; }
 }
+
 
