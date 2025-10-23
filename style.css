@@ -6,11 +6,18 @@ html, body {
   overflow: hidden;
   background: black;
 }
-
-body {
-  font-family: 'Poppins';
+:root {
+  --font-main: 'Poppins', sans-serif;
+  --text-color: #fff;
 }
-
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow: hidden;
+}
 
 .hero {
   position: relative;
@@ -45,6 +52,7 @@ body {
   font-family: 'Poppins';
   font-size: calc(90 * 100vw / 1920);
   font-weight: 800;
+  font-style: italic; 
   color: white;
   text-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
@@ -81,6 +89,7 @@ body {
 .social-left,
 .social-right {
   font-family: 'Poppins';
+  font-weight: 600;
   font-size: calc(24 * 100vw / 1920);
   font-weight: 700;
   color: white;
@@ -114,6 +123,7 @@ body {
 
 .menu a {
   font-family: 'Poppins';
+  font-weight: 700; 
   font-size: calc(71 * 100vw / 1920);
   color: white;
   text-decoration: none;
@@ -146,4 +156,5 @@ body {
   }
   .menu a { font-size: 6vw; }
 }
+
 
