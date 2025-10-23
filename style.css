@@ -20,47 +20,45 @@ html, body {
   object-fit: cover;
 }
 
-/* scaling helper: 1vh ≈ (1400px reference height / actual viewport height)
-   we multiply all pixel offsets by (100 / 1400) to get vh, and font sizes by (100 / 1920)*vw */
-
+/* Coach Designs title */
 .title {
   position: absolute;
-  top: calc(785 * 100vh / 1400);   /* your PS Y position */
+  top: 39.29vh;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Poppins', sans-serif;
   font-size: calc(90 * 100vw / 1920);
   font-weight: 800;
   color: white;
-  text-shadow: 0 0 15px rgba(0,0,0,0.7);
+  text-shadow: 0 0 15px rgba(0,0,0,0.6);
 }
 
 /* socials */
 .socials {
   position: absolute;
-  bottom: calc(635 * 100vh / 1400);
+  top: 45.41vh;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: calc(200 * 100vw / 1920); /* spacing between the two handles */
+  gap: calc(180 * 100vw / 1920);
 }
 
 .socials a {
   font-family: 'Poppins', sans-serif;
   font-size: calc(24 * 100vw / 1920);
   color: white;
-  text-decoration: none;
   font-weight: 700;
+  text-decoration: none;
 }
 
 /* nav */
 .menu {
   position: absolute;
-  bottom: calc(210 * 100vh / 1400);
+  top: 86vh;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: calc(250 * 100vw / 1920);
+  gap: calc(220 * 100vw / 1920);
 }
 
 .menu a {
@@ -68,9 +66,9 @@ html, body {
   font-size: calc(71 * 100vw / 1920);
   color: white;
   text-decoration: none;
-  border-bottom: 3px solid rgba(255,255,255,0.6);
-  padding-bottom: 0.5vh;
-  transition: border 0.2s;
+  border-bottom: 3px solid rgba(255,255,255,0.5);
+  padding-bottom: 0.4vh;
+  transition: 0.3s;
 }
 
 .menu a:hover {
