@@ -23,7 +23,7 @@ html, body {
 /* "Coach Designs" text — 550px from top */
 .title {
   position: absolute;
-  top: 39.29vh; /* (550 / 1400) * 100 */
+  top: 32vh; /* (550 / 1400) * 100 */
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Poppins';
@@ -88,4 +88,5 @@ html, body {
 .menu a:hover {
   border-bottom: 3px solid white;
 }
+
 
