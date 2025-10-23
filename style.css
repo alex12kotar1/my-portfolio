@@ -26,7 +26,7 @@ html, body {
   top: 39.29vh; /* (550 / 1400) * 100 */
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: calc(90 * 100vw / 1920);
   font-weight: 800;
   color: white;
@@ -41,8 +41,8 @@ html, body {
 .social-left,
 .social-right {
   position: absolute;
-  top: 45.41vh; /* (635.7 / 1400) * 100 */
-  font-family: 'Poppins', sans-serif;
+  top: 50vh; /* (635.7 / 1400) * 100 */
+  font-family: 'Poppins';
   font-size: calc(24 * 100vw / 1920);
   font-weight: 700;
   color: white;
@@ -76,7 +76,7 @@ html, body {
 }
 
 .menu a {
-  font-family: 'RBNo2.1aW00-BlackItalic', sans-serif;
+  font-family: 'RBNo2.1aW00-BlackItalic';
   font-size: calc(71 * 100vw / 1920);
   color: white;
   text-decoration: none;
@@ -88,3 +88,4 @@ html, body {
 .menu a:hover {
   border-bottom: 3px solid white;
 }
+
