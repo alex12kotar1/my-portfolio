@@ -1,16 +1,12 @@
-/* reset */
-* {
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: black;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+  background: black;
 }
 
-/* main hero background */
 .hero {
   position: relative;
   width: 100vw;
@@ -18,69 +14,65 @@ body {
 }
 
 .bg {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
-/* Coach Designs title */
+/* scaling helper: 1vh ≈ (1400px reference height / actual viewport height)
+   we multiply all pixel offsets by (100 / 1400) to get vh, and font sizes by (100 / 1920)*vw */
+
 .title {
   position: absolute;
-  top: 49%; /* aligns center relative to 1920x1400 */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'PoppinsExtraBoldItalic', sans-serif;
-  font-size: clamp(40px, 4.7vw, 90px);
-  color: #fff;
-  font-weight: 800;
-  text-align: center;
-  text-shadow: 0px 0px 10px rgba(255,255,255,0.5);
-}
-
-/* socials section */
-.socials {
-  position: absolute;
-  bottom: 27%; /* proportional to the 1400px height */
-  width: 100%;
-  text-align: center;
-}
-
-.social-left, .social-right {
-  position: absolute;
-  font-family: 'PoppinsExtraBoldItalic', sans-serif;
-  font-size: clamp(16px, 1.3vw, 24px);
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.social-left:hover, .social-right:hover {
-  opacity: 0.7;
-}
-
-.social-left {
-  right: 53%; /* left handle */
-}
-
-.social-right {
-  left: 53%; /* right handle */
-}
-
-/* nav links */
-nav {
-  position: absolute;
-  bottom: 7%; /* relative to image height */
+  top: calc(785 * 100vh / 1400);   /* your PS Y position */
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: 7vw;
+  font-family: 'Poppins', sans-serif;
+  font-size: calc(90 * 100vw / 1920);
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
-nav a {
-  font-family: 'RBNo2BlackItalic', sans-serif;
-  font-size: clamp(32px, 3.3vw, 71px);
-  color: #fff;
-  text-decoration:
+/* socials */
+.socials {
+  position: absolute;
+  bottom: calc(635 * 100vh / 1400);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: calc(200 * 100vw / 1920); /* spacing between the two handles */
+}
+
+.socials a {
+  font-family: 'Poppins', sans-serif;
+  font-size: calc(24 * 100vw / 1920);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* nav */
+.menu {
+  position: absolute;
+  bottom: calc(210 * 100vh / 1400);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: calc(250 * 100vw / 1920);
+}
+
+.menu a {
+  font-family: 'RBNo2.1aW00-BlackItalic', sans-serif;
+  font-size: calc(71 * 100vw / 1920);
+  color: white;
+  text-decoration: none;
+  border-bottom: 3px solid rgba(255,255,255,0.6);
+  padding-bottom: 0.5vh;
+  transition: border 0.2s;
+}
+
+.menu a:hover {
+  border-bottom: 3px solid white;
+}
