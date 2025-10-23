@@ -7,6 +7,11 @@ html, body {
   background: black;
 }
 
+body {
+  font-family: 'Poppins';
+}
+
+
 .hero {
   position: relative;
   width: 100vw;
@@ -141,3 +146,4 @@ html, body {
   }
   .menu a { font-size: 6vw; }
 }
+
