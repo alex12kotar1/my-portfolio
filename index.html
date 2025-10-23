@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <!-- ✅ Forces the browser to render at true device width & scale correctly -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <!-- ✅ Makes layout scale perfectly across all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>Coach Designs</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Coach Designs</title>
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Optional: Prevent text auto-resizing on mobile -->
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-  </head>
-  <body>
-    <div class="hero">
-      <img src="updatedhomesiteBLANK.png" class="bg" alt="Background">
+  <!-- Prevents auto text resizing on mobile -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+  <div class="hero">
+    <img src="updatedhomesiteBLANK.png" class="bg" alt="Background">
 
-      <h1 class="title glow">Coach Designs</h1>
+    <!-- ✅ New centered CD logo -->
+    <img src="cdlogo.png" class="cdlogo glow" alt="CD Logo">
 
-      <!-- Left social (Instagram + text) -->
-      <div class="social-group-left glow">
-        <img src="instagram.png" class="social-icon glow" alt="Instagram">
-        <a href="https://instagram.com/coachdesigns_" target="_blank" rel="noopener noreferrer" class="social-left glow">@coachdesigns_</a>
-      </div>
+    <!-- Main title -->
+    <h1 class="title glow">Coach Designs</h1>
 
-      <!-- Right social (Twitter/X + text) -->
-      <div class="social-group-right glow">
-        <img src="twitter.png" class="social-icon glow" alt="Twitter">
-        <a href="https://x.com/designsbycoach" target="_blank" rel="noopener noreferrer" class="social-right glow">@DesignsByCoach</a>
-      </div>
-
-      <!-- Bottom nav links -->
-      <nav class="menu">
-        <a href="about.html">ABOUT</a>
-        <a href="portfolio.html">PORTFOLIO</a>
-        <a href="contact.html">CONTACT</a>
-      </nav>
+    <!-- Left social (Instagram) -->
+    <div class="social-group-left glow">
+      <img src="instagram.png" class="social-icon glow" alt="Instagram">
+      <a href="https://instagram.com/coachdesigns_" target="_blank" rel="noopener noreferrer" class="social-left glow">@coachdesigns_</a>
     </div>
-  </body>
+
+    <!-- Right social (Twitter/X) -->
+    <div class="social-group-right glow">
+      <img src="twitter.png" class="social-icon glow" alt="Twitter">
+      <a href="https://x.com/designsbycoach" target="_blank" rel="noopener noreferrer" class="social-right glow">@DesignsByCoach</a>
+    </div>
+
+    <!-- Bottom navigation -->
+    <nav class="menu">
+      <a href="about.html">ABOUT</a>
+      <a href="portfolio.html">PORTFOLIO</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </div>
+</body>
 </html>
