@@ -1,118 +1,86 @@
-/* Fonts */
-@font-face {
-  font-family: 'RBNo2';
-  src: url('RBNo2.1a W00 BlackItalic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('Poppins-ExtraBoldItalic.ttf') format('truetype');
-  font-weight: 800;
-  font-style: italic;
-}
-
-/* Reset + background */
-body {
+/* reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  overflow: hidden;
+}
+
+/* main hero background */
+.hero {
+  position: relative;
+  width: 100vw;
   height: 100vh;
-  background: url('updatedhomesiteBLANK.png') no-repeat center center/cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #fff;
-  text-align: center;
 }
 
-/* Center section */
-.center-content {
-  margin-top: 15vh;
+.bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
+/* Coach Designs title */
 .title {
   position: absolute;
-  top: 550px;
+  top: 49%; /* aligns center relative to 1920x1400 */
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Poppins', sans-serif;
-  font-size: 90px;
+  font-family: 'PoppinsExtraBoldItalic', sans-serif;
+  font-size: clamp(40px, 4.7vw, 90px);
+  color: #fff;
   font-weight: 800;
-  text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
-  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(255,255,255,0.5);
+}
+
+/* socials section */
+.socials {
+  position: absolute;
+  bottom: 27%; /* proportional to the 1400px height */
+  width: 100%;
+  text-align: center;
 }
 
 .social-left, .social-right {
   position: absolute;
-  bottom: 635.7px; /* exact vertical placement from bottom */
-  font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-  color: white;
-  font-weight: 600;
-}
-
-/* left one sits to the left of center */
-.social-left {
-  right: 55%; /* slightly left of center line */
-}
-
-/* right one sits to the right of center */
-.social-right {
-  left: 55%; /* slightly right of center line */
+  font-family: 'PoppinsExtraBoldItalic', sans-serif;
+  font-size: clamp(16px, 1.3vw, 24px);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .social-left:hover, .social-right:hover {
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-}
-
-.divider {
   opacity: 0.7;
-  font-size: 20px;
 }
 
-/* Bottom navigation */
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  margin-bottom: 80px;
+.social-left {
+  right: 53%; /* left handle */
 }
 
-.nav a {
-  font-family: 'RBNo2', sans-serif;
-  font-size: 71px;
-  text-decoration: none;
-  color: white;
-  position: relative;
-  transition: all 0.2s ease-in-out;
+.social-right {
+  left: 53%; /* right handle */
 }
 
-.nav a::after {
-  content: "";
+/* nav links */
+nav {
   position: absolute;
-  width: 0%;
-  height: 3px;
-  background: white;
-  left: 0;
-  bottom: -10px;
-  transition: width 0.25s ease;
+  bottom: 7%; /* relative to image height */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7vw;
 }
 
-.nav a:hover::after {
-  width: 100%;
-}
-
-.nav a:hover {
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-/* Responsiveness */
-@media (max-width: 900px) {
-  .title { font-size: 60px; }
-  .socials { font-size: 18px; }
-  .nav a { font-size: 40px; }
-  .nav { gap: 40px; }
-}
-
-
+nav a {
+  font-family: 'RBNo2BlackItalic', sans-serif;
+  font-size: clamp(32px, 3.3vw, 71px);
+  color: #fff;
+  text-decoration:
