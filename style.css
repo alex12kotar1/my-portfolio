@@ -32,6 +32,10 @@ body {
 }
 
 .title {
+  position: absolute;
+  top: 550px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'Poppins', sans-serif;
   font-size: 90px;
   font-weight: 800;
@@ -39,22 +43,26 @@ body {
   margin-bottom: 10px;
 }
 
-.socials {
+.social-left, .social-right {
+  position: absolute;
+  bottom: 635.7px; /* exact vertical placement from bottom */
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.social {
-  text-decoration: none;
   color: white;
   font-weight: 600;
 }
 
-.social:hover {
+/* left one sits to the left of center */
+.social-left {
+  right: 52%; /* slightly left of center line */
+}
+
+/* right one sits to the right of center */
+.social-right {
+  left: 52%; /* slightly right of center line */
+}
+
+.social-left:hover, .social-right:hover {
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
@@ -106,3 +114,4 @@ body {
   .nav a { font-size: 40px; }
   .nav { gap: 40px; }
 }
+
