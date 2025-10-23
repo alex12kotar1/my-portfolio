@@ -21,7 +21,17 @@ html, body {
   object-position: center;
 }
 
-/* Coach Designs */
+/* === New CD logo === */
+.cdlogo {
+  position: absolute;
+  top: 11h; /* 348.5 / 1400 * 100 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(400 * 100vw / 1920);
+  height: auto;
+}
+
+/* === Title === */
 .title {
   position: absolute;
   top: 25vh; /* (550 / 1400) * 100 */
@@ -34,7 +44,7 @@ html, body {
   text-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
-/* SOCIALS */
+/* === Socials === */
 :root {
   --social-offset-vw: calc(220 * 100vw / 1920);
 }
@@ -59,7 +69,7 @@ html, body {
 }
 
 .social-icon {
-  height: calc(25 * 100vw / 1920); /* you can adjust this */
+  height: calc(25 * 100vw / 1920);
   width: auto;
 }
 
@@ -69,7 +79,7 @@ html, body {
   font-size: calc(24 * 100vw / 1920);
   font-weight: 700;
   color: white;
-  text-decoration: none;
+
   white-space: nowrap;
 }
 
@@ -78,16 +88,17 @@ html, body {
   text-shadow: 0 0 15px rgba(255,255,255,0.5);
 }
 
+/* === Glow Effect === */
 .glow {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))
-          drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6))
+          drop-shadow(0 0 25px rgba(255, 255, 255, 0.3));
 }
 
-/* NAVIGATION */
+/* === Navigation === */
 .menu {
   position: absolute;
   top: 86vh; /* (1204 / 1400) * 100 */
-  left: 52.5%;
+  left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
@@ -102,7 +113,7 @@ html, body {
   color: white;
   text-decoration: none;
   border-bottom: 2px solid rgba(255,255,255,0.6);
-  padding-bottom: 0.1vh; /* tightened spacing */
+  padding-bottom: 0.3vh;
   transition: all 0.3s ease;
   text-align: center;
 }
@@ -110,4 +121,23 @@ html, body {
 .menu a:hover {
   border-bottom: 2px solid white;
   text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+/* === Responsive layout === */
+@media (max-width: 1024px) {
+  .cdlogo { top: 23vh; width: 25vw; }
+  .title { font-size: 8vw; top: 28vh; }
+  .social-group-left, .social-group-right { top: 50vh; gap: 2vw; }
+  .menu { top: 88vh; gap: 12vw; }
+  .menu a { font-size: 5vw; }
+}
+
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    top: 85vh;
+  }
+  .menu a { font-size: 6vw; }
 }
