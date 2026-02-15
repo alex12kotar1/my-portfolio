@@ -1,122 +1,122 @@
-/* Ensure the body doesn't hide the image */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background-color: #000;
+    background: black;
     font-family: 'Poppins', sans-serif;
+    -webkit-text-size-adjust: 100%; /* Fixes iOS auto-zoom on text */
 }
 
 .hero {
     position: relative;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Fixed Background Logic */
 .bg {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This makes it look like your first screenshot */
-    object-position: center;
-    z-index: 1; /* Sits at the bottom */
+    object-fit: cover;
+    z-index: 0;
 }
 
-/* Content Container */
-.branding-stack {
-    position: relative;
-    z-index: 10; /* Ensures text is ABOVE the background */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transform: translateY(-5vh); 
-}
-
+/* === CD Logo === */
 .cdlogo {
-    width: clamp(180px, 20vw, 400px);
+    position: absolute;
+    top: 12vh; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(200px, 22vw, 420px);
     height: auto;
-    margin-bottom: 0;
+    z-index: 10;
 }
 
+/* === Main Title (Lowered to fix the "too high" issue) === */
 .title {
-    font-size: clamp(2.2rem, 5vw, 6rem);
+    position: absolute;
+    top: 42vh; /* Lowered from 35% to give breathing room */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(2rem, 5.5vw, 6.5rem);
     font-weight: 800;
     font-style: italic;
-    margin: -10px 0 10px 0;
     color: white;
-    text-shadow: 0 0 20px rgba(0,0,0,0.9);
-    line-height: 1;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8);
+    margin: 0;
+    white-space: nowrap; /* Prevents text wrapping on small screens */
+    z-index: 10;
 }
 
-/* Socials row spacing */
-.socials-row {
-    display: flex;
-    gap: 3.5rem;
-    margin-top: 5px;
-}
-
-.social-item {
+/* === Social Groups (Lowered to stay under the title) === */
+.social-group-left, .social-group-right {
+    position: absolute;
+    top: 56vh; /* Lowered to clear the Title's shadow */
     display: flex;
     align-items: center;
     gap: 10px;
+    z-index: 10;
+}
+
+.social-group-left {
+    right: 51%; /* Locks to the left of the center line */
+}
+
+.social-group-right {
+    left: 51%; /* Locks to the right of the center line */
 }
 
 .social-icon {
-    height: clamp(18px, 1.5vw, 25px);
+    height: clamp(16px, 1.8vw, 28px);
     width: auto;
 }
 
-.social-link {
-    font-size: clamp(14px, 1.2vw, 22px);
+.social-left, .social-right {
     font-weight: 700;
+    font-size: clamp(14px, 1.4vw, 24px);
     color: white;
     text-decoration: none;
+    white-space: nowrap; /* Keeps handles on one line */
 }
 
-/* Your specific glow effect */
-.glow {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6))
-           drop-shadow(0 0 25px rgba(255, 255, 255, 0.3));
-}
-
-/* Bottom Nav */
+/* === Navigation (The Bottom Bar) === */
 .menu {
     position: absolute;
     bottom: 8vh;
-    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: clamp(2rem, 8vw, 15rem);
-    width: 100%;
-    justify-content: center;
+    width: max-content;
+    z-index: 10;
 }
 
 .menu a {
-    font-size: clamp(1.1rem, 3.5vw, 4.5rem);
     font-weight: 700;
+    font-size: clamp(1.2rem, 4vw, 5rem);
     color: white;
     text-decoration: none;
     border-bottom: 3px solid rgba(255,255,255,0.6);
     padding-bottom: 5px;
-    transition: 0.3s ease;
+    white-space: nowrap;
 }
 
-.menu a:hover {
-    border-bottom: 3px solid white;
-    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+/* === Effects === */
+.glow {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) 
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
 }
 
-/* Mobile fix */
+/* iOS / Mobile Resolution Guard */
 @media (max-width: 768px) {
-    .socials-row { flex-direction: column; gap: 1rem; }
-    .menu { bottom: 5vh; gap: 1.5rem; }
+    .cdlogo { top: 15vh; width: 40vw; }
+    .title { top: 38vh; font-size: 8vw; }
+    .social-group-left, .social-group-right { 
+        top: 48vh; 
+        position: absolute; 
+    }
+    .menu { bottom: 5vh; gap: 4vw; }
+    .menu a { font-size: 5vw; }
 }
