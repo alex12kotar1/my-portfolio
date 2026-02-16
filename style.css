@@ -470,67 +470,49 @@ body:not(.portfolio-body) {
     margin-top: 10px; 
 }
 
-/* === MOBILE ABOUT PAGE STACKING (CHRONOLOGICAL) === */
+/* === MOBILE ABOUT PAGE STACKING - FIXED SEQUENCE === */
 @media (max-width: 768px) {
-    /* 1. Global Horizontal Lock */
-    .hero, .about-page-container {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    /* 2. Stack Columns & Center Content */
     .about-main-wrapper {
         flex-direction: column; 
         align-items: center;
-        gap: 40px;
+        gap: 35px;
     }
 
-    /* 3. Bio Text Stays Top, History follows */
+    /* Column 1: Lummy/2019 Section */
+    .about-left-col {
+        order: 2; /* Moves to second place */
+        width: 100%;
+    }
+
+    /* Column 2: Contains Bio (Top) and Sports (Bottom) */
     .about-right-col {
         display: flex;
         flex-direction: column;
-        order: 2; /* Moves the Sports/Current section to the bottom */
+        order: 1; /* Moves to first place, but we reorder the inside */
         width: 100%;
     }
 
-    .about-left-col {
-        display: flex;
-        flex-direction: column;
-        order: 1; /* Moves the 2019/Lummy section to the top */
-        width: 100%;
-    }
-
-    /* 4. Formatting Fixes */
-    .bio-text-box p {
-        text-align: center; 
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-    }
-
-    .about-img.screenshot { 
-        max-width: 200px; /* 7k image */
-    }
-    
-    .about-img.header-img { 
-        max-width: 95%; /* DalaiL Banner */
+    /* Logic to split the Bio and Sports inside the same column */
+    .bio-text-box {
+        order: 1; /* "My name is Alex..." goes to the VERY top */
+        text-align: center;
     }
 
     .current-work-row {
-        justify-content: center; 
-        width: 100%;
-        gap: 10px;
+        order: 3; /* Sports pics go AFTER the 2019 section */
+        justify-content: center;
+        margin-top: 35px;
     }
 
-    .about-img.square-img {
-        max-width: 46%; /* Side-by-side squares */
-    }
-
-    .history-text, .transition-text {
+    .transition-text {
+        order: 4; /* "I transitioned..." goes last */
         text-align: center;
-        padding: 0 15px;
-        font-size: 1rem;
     }
+
+    /* Image Sizing - Values only */
+    .about-img.screenshot { max-width: 190px; }
+    .about-img.header-img { max-width: 95%; }
+    .about-img.square-img { max-width: 46%; }
+    
+    .history-text { text-align: center; padding: 0 10px; }
 }
-
-
-
