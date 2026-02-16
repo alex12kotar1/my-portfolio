@@ -469,28 +469,42 @@ body:not(.portfolio-body) {
     text-align: left; 
     margin-top: 10px; 
 }
-
 @media (max-width: 768px) {
-    /* 1. Stack the columns but put the Bio/Sports column on TOP */
+    /* 1. Change reverse to normal column so 2019 stays in the middle */
     .about-main-wrapper {
-        flex-direction: column-reverse; /* This puts Bio/Sports at the top, 2019 at the bottom */
+        display: flex;
+        flex-direction: column; 
         align-items: center;
         gap: 30px;
     }
 
-    /* 2. Make sure the Bio text stays at the top of its stack */
+    /* 2. Force the Bio to the top of the whole page */
     .about-right-col {
         display: flex;
         flex-direction: column;
         width: 100%;
+        order: 2; /* Moves the Sports section below the 2019 section */
+    }
+
+    .about-left-col {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        order: 1; /* This is the 2019 section */
     }
 
     .bio-text-box {
-        order: -1; /* Forces "My name is Alex..." to the very top of the page */
+        order: -1; /* This pulls ONLY the bio text out of its column and puts it at the very top */
         text-align: center;
+        position: absolute; /* This lifts it to the top of the wrapper */
+        top: -120px; /* Adjust this number to create space for the intro text */
+    }
+    
+    .about-main-wrapper {
+        padding-top: 140px; /* This makes room for the bio we just lifted up */
     }
 
-    /* 3. Image Sizing - Strictly values */
+    /* 3. Image Sizing - Keep your exact values */
     .about-img.screenshot { max-width: 200px; margin: 0 auto; }
     .about-img.header-img { max-width: 95%; margin: 0 auto; }
     
@@ -508,3 +522,4 @@ body:not(.portfolio-body) {
         padding: 0 10px;
     }
 }
+
