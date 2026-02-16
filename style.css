@@ -471,48 +471,41 @@ body:not(.portfolio-body) {
 }
 
 @media (max-width: 768px) {
-    /* 1. Changed "column-reverse" to "column" and flipped the order values */
+    /* This makes the containers "invisible" so we can move Bio and Sports apart */
+    .about-left-col, .about-right-col {
+        display: contents;
+    }
+
     .about-main-wrapper {
+        display: flex;
         flex-direction: column; 
         align-items: center;
         gap: 30px;
     }
 
-    .about-right-col {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        order: 1; /* Moves Bio to the top */
+    /* 1. BIO AT THE VERY TOP */
+    .bio-text-box { 
+        order: 1; 
+        text-align: center; 
     }
 
-    .about-left-col {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        order: 2; /* Moves 2019 to the middle */
-    }
+    /* 2. 2019 PICS & TEXT IN THE MIDDLE */
+    .about-img.screenshot { order: 2; max-width: 200px; margin: 0 auto; }
+    .about-img.header-img { order: 3; max-width: 95%; margin: 0 auto; }
+    .history-text { order: 4; text-align: center; padding: 0 10px; }
 
-    .bio-text-box {
-        order: -1; 
-        text-align: center;
+    /* 3. SPORTS PICS & TRANSITION AT THE BOTTOM */
+    .current-work-row { 
+        order: 5; 
+        justify-content: center; 
+        gap: 10px; 
+        margin-top: 20px; 
+        display: flex; 
     }
-
-    /* 3. Image Sizing - EXACTLY as you had it */
-    .about-img.screenshot { max-width: 200px; margin: 0 auto; }
-    .about-img.header-img { max-width: 95%; margin: 0 auto; }
-    
-    .current-work-row {
-        justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
-    }
-
     .about-img.square-img { max-width: 46%; }
+    .transition-text { order: 6; text-align: center; padding: 0 10px; }
 
-    /* 4. Center all text for mobile - EXACTLY as you had it */
-    .history-text, .transition-text, .bio-text-box p {
-        text-align: center;
-        padding: 0 10px;
-    }
+    /* Centering the Bio p text */
+    .bio-text-box p { text-align: center; padding: 0 10px; }
 }
 
