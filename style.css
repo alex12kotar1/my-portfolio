@@ -112,8 +112,8 @@ body:not(.portfolio-body) {
 @media (max-width: 768px) {
     .menu {
         bottom: 6vh; /* Keeps it clear of the bottom home bar on iOS */
-        gap: clamp(1rem, 5vw, 2rem); /* Significantly reduces gap so they fit on one line */
-        width: 90%; /* Keeps the text from hitting the screen edges */
+        gap: clamp(1rem, 4vw, 2rem); /* Significantly reduces gap so they fit on one line */
+        width: 80%; /* Keeps the text from hitting the screen edges */
     }
 
     .menu a {
@@ -531,5 +531,6 @@ body:not(.portfolio-body) {
         font-size: 1rem;
     }
 }
+
 
 
