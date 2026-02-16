@@ -303,7 +303,7 @@ body:not(.portfolio-body) {
     font-size: clamp(0.9rem, 1.5vw, 1.2rem); 
     color: white;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    margin: 10px 0; /* Tightened margin to save space */
+    margin: 9px 0; /* Tightened margin to save space */
 }
 
 .social-wrapper {
