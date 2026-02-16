@@ -289,12 +289,14 @@ body:not(.portfolio-body) {
     z-index: 10;
     text-align: center;
     width: 100%;
-    max-width: 1350px; /* Matches About Page width */
-    padding: 20px 0px; 
+    max-width: 1350px; 
+    margin: 0 auto; /* This centers the container on the screen */
+    padding: 20px 20px; 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
+    align-items: center; 
+    box-sizing: border-box; 
+    overflow-x: hidden; /* Locks horizontal scroll for this container */
 }
 
 .contact-info p {
@@ -334,10 +336,25 @@ body:not(.portfolio-body) {
     opacity: 0.9;
 }
 
-/* === MOBILE CONTACT PAGE ADJUSTMENTS === */
+/* === MOBILE CONTACT FIXES === */
 @media (max-width: 768px) {
-    .contact-container {
-        padding: 40px 10px; 
+    /* Locks horizontal scrolling globally */
+    html, body {
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .social-wrapper {
+        flex-direction: column; /* Forces images to stack vertically */
+        gap: 20px;
+        width: 100%;
+    }
+
+    .img-insta, .img-x { 
+        width: 90%; /* Scale to fit phone width */
+        max-width: 350px;
+        height: auto; 
     }
 }
 
@@ -452,3 +469,4 @@ body:not(.portfolio-body) {
     text-align: left; 
     margin-top: 10px; 
 }
+
