@@ -470,3 +470,61 @@ body:not(.portfolio-body) {
     margin-top: 10px; 
 }
 
+/* === MOBILE ABOUT PAGE STACKING === */
+@media (max-width: 768px) {
+    /* 1. Global Horizontal Lock */
+    .hero, .about-page-container {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* 2. Stack Columns & Center Content */
+    .about-main-wrapper {
+        flex-direction: column; /* Stacks Left Col then Right Col */
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* 3. Reorder Elements via Flexbox Order */
+    .about-right-col {
+        display: flex;
+        flex-direction: column;
+        order: -1; /* Moves Bio text to the very top */
+        width: 100%;
+    }
+
+    .bio-text-box p {
+        text-align: center; /* Centers intro text */
+        font-size: 1.1rem;
+    }
+
+    .about-left-col {
+        width: 100%;
+        order: 1; /* Places Lummy section after Bio */
+    }
+
+    /* 4. Sizing for the stacked images */
+    .about-img.screenshot { 
+        max-width: 180px; /* 7k image */
+    }
+    
+    .about-img.header-img { 
+        max-width: 90%; /* DalaiL Banner */
+    }
+
+    .current-work-row {
+        justify-content: center; /* Centers Marshall & Offers */
+        width: 100%;
+    }
+
+    .about-img.square-img {
+        max-width: 45%; /* Side-by-side squares on mobile */
+    }
+
+    .history-text, .transition-text {
+        text-align: center; /* Centers all descriptive text */
+        padding: 0 10px;
+        font-size: 0.95rem;
+    }
+}
+
