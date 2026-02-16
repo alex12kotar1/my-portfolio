@@ -38,8 +38,8 @@ body:not(.portfolio-body) {
 
 /* === GLOW EFFECT === */
 .glow {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)) 
-            drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5)) 
+            drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 /* === HOMEPAGE ELEMENTS === */
@@ -71,8 +71,58 @@ body:not(.portfolio-body) {
 .social-group-right { left: 51%; }
 .social-icon { height: clamp(16px, 1.8vw, 28px); width: auto; }
 .social-left, .social-right { font-weight: 700; font-size: clamp(14px, 1.4vw, 24px); color: white; text-decoration: none; }
-.menu { position: absolute; bottom: 8vh; left: 50%; transform: translateX(-50%); display: flex; gap: clamp(2rem, 8vw, 15rem); z-index: 10; }
-.menu a { font-weight: 700; font-size: clamp(1.2rem, 4vw, 5rem); color: white; text-decoration: none; border-bottom: 3px solid rgba(255,255,255,0.6); padding-bottom: 5px; }
+
+/* === REFINED HOMEPAGE MENU === */
+.menu { 
+    position: absolute; 
+    bottom: 3.5vh; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    justify-content: center; /* Forces the flex items to balance around the center */
+    align-items: center;
+    gap: clamp(4rem, 17vw, 22rem); 
+    z-index: 10; 
+    width: 100vw; /* Spans the full width to ensure the 50% left transform is perfect */
+    white-space: nowrap; /* Prevents text from wrapping and shifting the center */
+}
+
+.menu a { 
+    display: inline-block;
+    min-width: 120px; /* Gives each link a consistent "box" so the gaps are equal */
+    text-align: center;
+    font-weight: 800; 
+    font-size: clamp(1.2rem, 3.5vw, 3.8rem); 
+    color: white; 
+    text-decoration: none; 
+    border-bottom: 4px solid rgba(255,255,255,0.4); 
+    padding-bottom: 5px;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+.menu a:hover {
+    color: #fff;
+    border-bottom: 4px solid rgba(255,255,255,1);
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    transform: translateY(-3px);
+}
+
+/* === MOBILE HOME PAGE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .menu {
+        bottom: 6vh; /* Keeps it clear of the bottom home bar on iOS */
+        gap: clamp(1rem, 5vw, 2rem); /* Significantly reduces gap so they fit on one line */
+        width: 90%; /* Keeps the text from hitting the screen edges */
+    }
+
+    .menu a {
+        font-size: clamp(0.9rem, 4vw, 1.2rem); /* Scales text down for phone screens */
+        border-bottom: 2px solid rgba(255,255,255,0.4); /* Thinner line for mobile */
+        padding-bottom: 4px;
+        letter-spacing: 1px; /* Tighter spacing for readability */
+    }
+}
 
 /* === PORTFOLIO CONTENT LAYER === */
 .portfolio-page {
@@ -187,3 +237,104 @@ body:not(.portfolio-body) {
 @media (max-width: 768px) {
     .banner-grid { grid-template-columns: 1fr; }
 }
+
+/* --- Sports Grid System --- */
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* --- Solo Hero Poster Styling --- */
+.hero-poster-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.portfolio-poster {
+    width: 100%;
+    /* This allows it to be taller than the squares without cutting off */
+    max-width: 400px; 
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.portfolio-poster:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile Tweak */
+@media (max-width: 768px) {
+    .portfolio-poster {
+        max-width: 100%; /* Fills the screen on mobile */
+    }
+}
+
+.site-footer {
+    margin-top: 40px;
+    padding-bottom: 25px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5); /* Faded so it doesn't distract from the art */
+    font-size: 0.9rem;
+}
+
+/* === FINAL CONTACT PAGE STYLES === */
+.contact-container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    /* Keep your 20px top/bottom, but set sides to 0 to fix the right-shift */
+    padding: 20px 0px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This handles the centering */
+    box-sizing: border-box; /* Prevents padding from pushing the width wide */
+}
+
+.contact-info p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;    
+    font-style: italic;  
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem); 
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    margin: 10px 0; /* Tightened margin to save space */
+}
+
+.social-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 10px; /* Reduced to push items up */
+}
+
+.img-insta { 
+    width: clamp(250px, 25vw, 300px); 
+    height: auto; 
+    border-radius: 10px; 
+}
+
+.img-x { 
+    width: clamp(300px, 30vw, 360px); 
+    height: auto; 
+    border-radius: 10px; 
+}
+
+.cd-outline-bottom {
+    width: 110px; /* Slightly smaller for a better fit */
+    margin-top: 15px; /* Pushed up significantly */
+    filter: brightness(0) invert(1); 
+    opacity: 0.9;
+}
+
+/* === MOBILE CONTACT PAGE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 40px 10px; 
+    }
