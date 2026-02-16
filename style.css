@@ -471,41 +471,33 @@ body:not(.portfolio-body) {
 }
 
 @media (max-width: 768px) {
-    /* 1. Change reverse to normal column so 2019 stays in the middle */
+    /* 1. Changed "column-reverse" to "column" and flipped the order values */
     .about-main-wrapper {
-        display: flex;
         flex-direction: column; 
         align-items: center;
         gap: 30px;
     }
 
-    /* 2. Force the Bio to the top of the whole page */
     .about-right-col {
         display: flex;
         flex-direction: column;
         width: 100%;
-        order: 2; /* Moves the Sports section below the 2019 section */
+        order: 1; /* Moves Bio to the top */
     }
 
     .about-left-col {
         display: flex;
         flex-direction: column;
         width: 100%;
-        order: 1; /* This is the 2019 section */
+        order: 2; /* Moves 2019 to the middle */
     }
 
     .bio-text-box {
-        order: -1; /* This pulls ONLY the bio text out of its column and puts it at the very top */
+        order: -1; 
         text-align: center;
-        position: absolute; /* This lifts it to the top of the wrapper */
-        top: -120px; /* Adjust this number to create space for the intro text */
-    }
-    
-    .about-main-wrapper {
-        padding-top: 140px; /* This makes room for the bio we just lifted up */
     }
 
-    /* 3. Image Sizing - Keep your exact values */
+    /* 3. Image Sizing - EXACTLY as you had it */
     .about-img.screenshot { max-width: 200px; margin: 0 auto; }
     .about-img.header-img { max-width: 95%; margin: 0 auto; }
     
@@ -517,9 +509,10 @@ body:not(.portfolio-body) {
 
     .about-img.square-img { max-width: 46%; }
 
-    /* 4. Center all text for mobile */
+    /* 4. Center all text for mobile - EXACTLY as you had it */
     .history-text, .transition-text, .bio-text-box p {
         text-align: center;
         padding: 0 10px;
     }
 }
+
