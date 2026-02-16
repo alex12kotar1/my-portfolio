@@ -469,6 +469,7 @@ body:not(.portfolio-body) {
     text-align: left; 
     margin-top: 10px; 
 }
+
 @media (max-width: 768px) {
     /* 1. Change reverse to normal column so 2019 stays in the middle */
     .about-main-wrapper {
@@ -522,4 +523,3 @@ body:not(.portfolio-body) {
         padding: 0 10px;
     }
 }
-
