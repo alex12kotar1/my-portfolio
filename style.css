@@ -470,49 +470,41 @@ body:not(.portfolio-body) {
     margin-top: 10px; 
 }
 
-/* === MOBILE ABOUT PAGE STACKING - FIXED SEQUENCE === */
 @media (max-width: 768px) {
+    /* 1. Stack the columns but put the Bio/Sports column on TOP */
     .about-main-wrapper {
-        flex-direction: column; 
+        flex-direction: column-reverse; /* This puts Bio/Sports at the top, 2019 at the bottom */
         align-items: center;
-        gap: 35px;
+        gap: 30px;
     }
 
-    /* Column 1: Lummy/2019 Section */
-    .about-left-col {
-        order: 2; /* Moves to second place */
-        width: 100%;
-    }
-
-    /* Column 2: Contains Bio (Top) and Sports (Bottom) */
+    /* 2. Make sure the Bio text stays at the top of its stack */
     .about-right-col {
         display: flex;
         flex-direction: column;
-        order: 1; /* Moves to first place, but we reorder the inside */
         width: 100%;
     }
 
-    /* Logic to split the Bio and Sports inside the same column */
     .bio-text-box {
-        order: 1; /* "My name is Alex..." goes to the VERY top */
+        order: -1; /* Forces "My name is Alex..." to the very top of the page */
         text-align: center;
     }
 
-    .current-work-row {
-        order: 3; /* Sports pics go AFTER the 2019 section */
-        justify-content: center;
-        margin-top: 35px;
-    }
-
-    .transition-text {
-        order: 4; /* "I transitioned..." goes last */
-        text-align: center;
-    }
-
-    /* Image Sizing - Values only */
-    .about-img.screenshot { max-width: 190px; }
-    .about-img.header-img { max-width: 95%; }
-    .about-img.square-img { max-width: 46%; }
+    /* 3. Image Sizing - Strictly values */
+    .about-img.screenshot { max-width: 200px; margin: 0 auto; }
+    .about-img.header-img { max-width: 95%; margin: 0 auto; }
     
-    .history-text { text-align: center; padding: 0 10px; }
+    .current-work-row {
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .about-img.square-img { max-width: 46%; }
+
+    /* 4. Center all text for mobile */
+    .history-text, .transition-text, .bio-text-box p {
+        text-align: center;
+        padding: 0 10px;
+    }
 }
