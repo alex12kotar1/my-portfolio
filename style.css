@@ -45,7 +45,7 @@ body:not(.portfolio-body) {
 /* === HOMEPAGE ELEMENTS === */
 .cdlogo {
     position: absolute;
-    top: 12vh; 
+    top: 9vh; 
     left: 50%;
     transform: translateX(-50%);
     width: clamp(200px, 22vw, 420px);
@@ -151,4 +151,5 @@ body:not(.portfolio-body) {
     .cdlogo { top: 15vh; width: 40vw; }
     .title { top: 38vh; font-size: 8vw; }
 }
+
 
